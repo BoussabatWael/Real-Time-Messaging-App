@@ -9,7 +9,9 @@ Users data (name,username,email,password,online/offline), registration date, mes
 
 # Installation
 Clone the repository.
+
 Run "pip install -r requirements.txt" to install required libraries.
+
 Run "python app.py" to execute the application.
 
 # Deployment
