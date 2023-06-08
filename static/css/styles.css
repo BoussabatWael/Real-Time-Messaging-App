@@ -1,0 +1,97 @@
+.usersList{
+    background-color: #f5f5f5;
+    margin: 0px 10px;
+    border-radius: 4px; 
+    padding: 10px 20px 20px 20px;
+}
+
+.users{
+    text-align: center;
+    font-size: 18px;
+    background-color: #ddd;
+    border-radius: 4px;
+    color: #5e5fa4;
+    margin-bottom: 8px;
+}
+
+.onlineuser{
+    height: 12px;
+    width: 12px;
+    background-color: #1fc124;
+    border-radius: 6px;
+    float: right;margin-top: 5px;
+}
+
+.offlineuser{
+    height: 12px;
+    width: 12px;
+    background-color: #8a8a8a;
+    border-radius: 6px;
+    float: right;margin-top: 5px;
+}
+
+.sessionName{
+    background-color: #f5f5f5;
+    margin: 0px 10px;
+    border-radius: 4px; 
+    padding: 10px 20px 20px 20px;
+}
+
+.ss_name{
+    text-align: center;
+    font-size: 18px; 
+    color: #22aa45;
+    background-color: #ddd;
+    border-radius: 4px;
+}
+
+.chatBox{
+    overflow-y: scroll; 
+    height: 350px; 
+    padding: 10px 0px 0px 0px;
+}
+
+.chatroomWelcome{
+    text-align: center;
+}
+
+.myfooter{
+    position: fixed; 
+    bottom: 10px;
+}
+
+.messageOne{
+    text-align:right; 
+    padding:2px 5px;
+}
+
+.messageTwo{
+    background-color: #286090;
+    color: #fff;
+    margin: 1px 0;
+    padding: 6px 12px; 
+    border-radius: 12px;
+}
+
+.messageThree{
+    text-align:left; 
+    padding:2px 5px;
+}
+
+.messageFour{
+    background-color: #242f3a;
+    color: #fff;
+    margin: 1px 0;
+    padding: 6px 12px; 
+    border-radius: 12px;
+}
+
+.formLogin{
+    text-align: center; 
+    color: #206aaa;
+}
+
+.formRegister{
+    text-align: center; 
+    color: #206aaa;
+}

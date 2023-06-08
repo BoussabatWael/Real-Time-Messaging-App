@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<br>
+<div class="text-center">
+    {% if session.logged_in == NULL%}
+        <h1>Real-time Messaging App</h1>
+        <p class="lead">This application is especially developed for Dezzex Technology Pvt.Ltd.&hearts;&hearts;</p>
+        <a href="/register" class="btn btn-primary btn-lg">Sign Up</a>
+        <a href="/login" class="btn btn-success btn-lg">Login</a>
+    {% else %}
+        <h1>Hi {{ session.s_name }}</h1>
+        <a href="/chatting/{{ session.uid }}" class="btn btn-primary btn-lg">Let's Start Chat</a>
+    {% endif %}
+</div>
+
+<footer class="myfooter">
+    <strong><u>FULL NAME</u> : WAEL BOUSSABAT, <u>ADDRESS</u> : AL RIGGA DUABI UNITED ARAB EMIRATES, <u>MOBILE NUMBER</u> : +971 55 299 2646, <u>EMAIL</u> : wael.boussabat@yahoo.com. &hearts;</strong>
+</footer>
+
+{% endblock %}

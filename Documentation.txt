@@ -1,0 +1,19 @@
+API DOC:
+============================================
+POST          http://127.0.0.1:5000/register
+form-data:
+name     : String
+email    : String
+username : String
+password : String
+============================================
+POST             http://127.0.0.1:5000/login
+form-data:
+username : String
+password : String
+============================================
+GET              http://127.0.0.1:5000/chats
+============================================
+POST       http://127.0.0.1:5000/chatting/id
+form-data:
+body : String

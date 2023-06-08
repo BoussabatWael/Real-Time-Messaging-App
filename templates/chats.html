@@ -1,0 +1,16 @@
+
+{% for message in chats %}
+    {% if (message.msg_by or message.msg_to) != session.uid %}
+        <div class="messageOne">
+            <p>
+                <span class="messageTwo"> {{message.body}}</span>
+            </p>
+        </div>
+    {% else %}
+        <div class="messageThree">
+            <p>
+                <span class="messageFour"> {{message.body}}</span>
+            </p>
+        </div>
+    {% endif %}
+{% endfor %}

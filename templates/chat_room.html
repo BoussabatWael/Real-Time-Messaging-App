@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+{% block body %}
+<script>
+    function ajax(){
+
+    var req = new XMLHttpRequest();
+    req.onreadystatechange = function(){
+    if(req.readyState == 4 && req.status == 200)
+    {
+    document.getElementById('chats').innerHTML = req.responseText;
+    }
+    }
+    req.open('POST', '/chats', true);
+    req.send();
+    }
+    setInterval(function(){ajax()}, 10);
+</script>
+<div class="row" onload="ajax();">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-4 usersList">
+        <div class="users">
+            <span>Users</span>
+        </div>
+        <ul class="list-group">
+            {% for user in users %}
+                {% if user.id != session.uid %}
+                    <li class="list-group-item"><a href="{{user.id}}"> {{user.name}} </a>
+                        {% if user.online != "0" %}
+                            <span class="onlineuser"></span>
+                        {% else %}
+                            <span class="offlineuser"></span>
+                        {% endif %}
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-xs-6 sessionName">
+
+        {% if session.lid %}
+            {% if session.name != session.s_name %}
+                <div class="ss_name">
+                    <span>{{ session.name}}</span>
+                </div>
+                <div id="chat-box" class="chatBox">
+                    <div id="chats"></div>
+                </div>
+                {% from "includes/_formhelpers.html" import render_field %}
+                <div>
+                    <form method="POST" action="">
+                    <div class="form-group">
+                        {{render_field(form.body, class_="form-control", value="", placeholder="Enter your text...")}}
+                    </div>
+                    <button type="submit" class="btn btn-primary pull-right">Send</button>
+                    </form>
+                </div>
+            {% else %}
+                <div class="chatroomWelcome">
+                    <h1>Welcome to the chat room</h1>
+                    <p class="lead">Select user and start chat...</p>
+                </div>
+            {% endif %}
+        {% endif %}
+
+    </div>
+    <div class="col-xs-1"></div>
+</div>
+
+<footer class="myfooter">
+    <strong><u>FULL NAME</u> : WAEL BOUSSABAT, <u>ADDRESS</u> : AL RIGGA DUABI UNITED ARAB EMIRATES, <u>MOBILE NUMBER</u> : +971 55 299 2646, <u>EMAIL</u> : wael.boussabat@yahoo.com. &hearts;</strong>
+</footer>
+
+{% endblock %}
